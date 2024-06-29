@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WELCOME TO HAMPUS'S PURGATORY!</title>
+    <style>
+        body {
+            background-color: #000;
+            color: #00FF00;
+            font-family: 'Courier New', Courier, monospace;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+        }
+
+        .vhs-text {
+            position: relative;
+            font-size: 2em;
+            text-shadow: 
+                -2px 0 red, 
+                2px 0 cyan;
+            animation: flicker 2s infinite;
+        }
+
+        @keyframes flicker {
+            0% {
+                opacity: 1;
+                text-shadow: 
+                    -2px 0 red, 
+                    2px 0 cyan;
+            }
+            50% {
+                opacity: 0.8;
+                text-shadow: 
+                    -2px 0 cyan, 
+                    2px 0 red;
+            }
+            100% {
+                opacity: 1;
+                text-shadow: 
+                    -2px 0 red, 
+                    2px 0 cyan;
+            }
+        }
+
+        .scanlines {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: repeating-linear-gradient(
+                to bottom,
+                rgba(0, 0, 0, 0) 0px,
+                rgba(0, 0, 0, 0) 2px,
+                rgba(0, 0, 0, 0.1) 3px
+            );
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .container {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+        }
+
+        .glitch {
+            position: relative;
+            color: lime;
+            font-size: 1.5em;
+        }
+
+        .glitch:before, .glitch:after {
+            content: 'edit this';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.8;
+            clip: rect(0, 900px, 0, 0);
+        }
+
+        .glitch:before {
+            left: 2px;
+            text-shadow: -2px 0 red;
+            animation: glitch 2s infinite linear alternate-reverse;
+        }
+
+        .glitch:after {
+            left: -2px;
+            text-shadow: -2px 0 blue;
+            animation: glitch 2s infinite linear alternate-reverse;
+        }
+
+        @keyframes glitch {
+            0% {
+                clip: rect(44px, 450px, 56px, 0);
+                transform: skew(0.3deg);
+            }
+            10% {
+                clip: rect(30px, 9999px, 70px, 0);
+                transform: skew(0.8deg);
+            }
+            20% {
+                clip: rect(44px, 9999px, 76px, 0);
+                transform: skew(0.5deg);
+            }
+            30% {
+                clip: rect(66px, 450px, 90px, 0);
+                transform: skew(0.6deg);
+            }
+            40% {
+                clip: rect(22px, 9999px, 52px, 0);
+                transform: skew(0.1deg);
+            }
+            50% {
+                clip: rect(20px, 9999px, 30px, 0);
+                transform: skew(0.3deg);
+            }
+            60% {
+                clip: rect(40px, 9999px, 80px, 0);
+                transform: skew(0.7deg);
+            }
+            70% {
+                clip: rect(50px, 450px, 70px, 0);
+                transform: skew(0.2deg);
+            }
+            80% {
+                clip: rect(40px, 9999px, 60px, 0);
+                transform: skew(0.6deg);
+            }
+            90% {
+                clip: rect(30px, 9999px, 50px, 0);
+                transform: skew(0.4deg);
+            }
+            100% {
+                clip: rect(44px, 450px, 56px, 0);
+                transform: skew(0.3deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="scanlines"></div>
+    <div class="container">
+        <div class="vhs-text">WELCOME TO HAMPUS'S PURGATORY!</div>
+                <p>There's no hope here!</p>
+                <p>I'd tell you to wait me in Heaven...</p>
+                <p>But I'm not going to Heaven.</p>
+                <p>For my fight is with the demons down under!</p><br>
+                <p>Go here maybe it will give you <a href="https://besthampus.github.io/C/">clarity?</a></p><br>
+<p>THERE'S A <a href="https://besthampus.github.io/TheWorldOfHampus/">SAFE HAVEN!</a></p>
+    </div>
+</body>
+</html>
