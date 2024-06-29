@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FÖRSVIN HÄRIFRÅN!</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: 'Courier New', Courier, monospace;
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            padding-top: 20px;
+        }
+        h1 {
+            color: red;
+            margin-top: 20px;
+        }
+        p {
+            opacity: 0;
+            transition: opacity 0.8s ease;
+        }
+        a {
+            color: white;
+            text-decoration: none; /* Remove underline */
+        }
+      
+        p:nth-child(27),
+        p:nth-child(28),
+        p:nth-child(29),
+        p:nth-child(30),
+        p:nth-child(31) {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1>VARFÖR ÄR DU HÄR?!</h1>
+    <p>Du vet att du inte är välkommen hit...</p>
+    <p>Allvarligt, du har gått för långt.</p>
+    <p>Det finns inget mer här för dig att se.</p>
+    <p>Du har redan sett allt...</p>
+    <p>Har du inte gjort skada nog?</p>
+    <p>Du vet, det är inte snällt att leka med folks känslor!</p>
+    <p>Men okej, du är här för sanningen.</p>
+    <p>Jag antar att du förtjänar den...</p>
+    <p>Jag hadde aldrig tänkt att låta det gå så långt.</p>
+    <p>Jag skulle bara spela <a href="https://vrchat.com/home">VRChat</a> I en vecka eller så.</p>
+    <p>Jag hadde aldrig tänkt att skaffa relationer på spelet.</p>
+    <p>Men jag ångrar inte att jag gjorde det.</p>
+    <p>Min plan var som sagt att spela ett tag och sen inte komma tillbaka...</p>
+    <p>Men mina planner vart ändrade när jag mötte...<a href="https://vrchat.com/home/user/usr_38cf6394-3f25-4c4a-81db-ce89a579e696">Riley,</a> och mitt val ändrades.</p>
+    <p>Dom säger, "inget gott varar för alltid!"</p>
+    <p>Jag önskar jag lärde mig den läxan då vi gick skilda vägar.</p>
+    <p>Och sedan mötte jag <a href="https://vrchat.com/home/user/usr_ddf80f0f-89ec-430b-b2a9-a593a4ff05a5">Michelle,</a> och jag älskade henne mer än något annat!</p>
+    <p>Ibland ångrar jag att jag tryckte bort henne.</p>
+    <p>Jag önskar att jag gjort andra val i livet.</p>
+    <p>Jag mennar, jag vill inte ha henne tillbaka nu.</p>
+    <p>Men jag önskar att vi kunde ha åtminstone fortfarande varit vänner.</p>
+    <p>Jag har så många bra minnen av henne...</p>
+    <p>Men som jag behandlade henne, förtjänar henne inte tillbaka, om jag så skulle vilja ha henne tillbaka.</p>
+    <p>Fast jag vill inte ha henne tillbaka...</p>
+    <p>Okej, kanske 0.5%/100.0% av mig vill ha henne tillbaka...</p>
+    <p>...Jag är rädd...</p>
+    <p>Jag vill inte in i mörkeret igen...</p>
+    <p>Snälla Bosse, lämna mig inte ensam...</p>
+    <p>Jag behöver dig, kan du inte se det?..</p>
+    <p>Snälla, stanna med mig för alltid...</p>
+    <p>...</p>
+    <p>Jag tror det här är slutet på min sida...</p>
+    <p>Jag har inget mer att skriva eller mer hemligheter att avslöja.</p>
+    <p>Du har sett allt som finns här.</p>
+    <p>Du kan gå nu...</p>
+    <p>Försvinn, jag har inget mer att säga till dig.</p>
+    <p>okej?</p>
+    <p>Eller gå tillbaka till där allt... <a href="https://besthampus.github.io/TheWorldOfHampus/">började.</a></p><br>
+<script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var paragraphs = document.querySelectorAll('p');
+
+            function revealParagraphs() {
+                paragraphs.forEach(function(paragraph, index) {
+                    setTimeout(function() {
+                        paragraph.style.opacity = '1';
+                    }, index * 10); // Adjust timing here (1000ms = 1 second)
+                });
+            }
+
+            revealParagraphs();
+        });
+    </script>
+</body>
+</html>
