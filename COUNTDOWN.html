@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bomb Counter Countdown</title>
+    <style>
+        body {
+            font-family: 'Courier New', Courier, monospace;
+            background-color: black;
+            color: red;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            flex-direction: column;
+        }
+        #countdown {
+            font-size: 50px;
+            background: black;
+            padding: 20px;
+            border: 5px solid red;
+            border-radius: 10px;
+            box-shadow: 0 0 20px red;
+            display: flex;
+            gap: 20px;
+        }
+        .time-box {
+            text-align: center;
+        }
+        .label {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: white;
+        }
+        h1 {
+            font-size: 30px;
+            color: red;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Countdown to Drink!</h1>
+    <div id="countdown">
+        <div class="time-box">
+            <div class="label">Weeks</div>
+            <div id="weeks">00</div>
+        </div>
+        <div class="time-box">
+            <div class="label">Days</div>
+            <div id="days">00</div>
+        </div>
+        <div class="time-box">
+            <div class="label">Hours</div>
+            <div id="hours">00</div>
+        </div>
+        <div class="time-box">
+            <div class="label">Minutes</div>
+            <div id="minutes">00</div>
+        </div>
+        <div class="time-box">
+            <div class="label">Seconds</div>
+            <div id="seconds">00</div>
+        </div>
+    </div>
+
+    <script>
+        // Set the date and time for the countdown
+        const targetDate = "August 3, 2024 20:00:00";
+        const countdownDate = new Date(targetDate).getTime();
+
+        // Function to update the countdown
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const distance = countdownDate - now;
+
+            const weeks = Math.floor(distance / (1000 * 60 * 60 * 24 * 7));
+            const days = Math.floor((distance % (1000 * 60 * 60 * 24 * 7)) / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById("weeks").innerHTML = weeks < 10 ? '0' + weeks : weeks;
+            document.getElementById("days").innerHTML = days < 10 ? '0' + days : days;
+            document.getElementById("hours").innerHTML = hours < 10 ? '0' + hours : hours;
+            document.getElementById("minutes").innerHTML = minutes < 10 ? '0' + minutes : minutes;
+            document.getElementById("seconds").innerHTML = seconds < 10 ? '0' + seconds : seconds;
+
+            if (distance < 0) {
+                clearInterval(countdownInterval);
+                document.getElementById("countdown").innerHTML = "TIME TO DRINK!";
+            }
+        }
+
+        // Initial call to display the countdown
+        updateCountdown();
+
+        // Update the countdown every 1 second
+        const countdownInterval = setInterval(updateCountdown, 1000);
+    </script>
+
+</body>
+</html>
