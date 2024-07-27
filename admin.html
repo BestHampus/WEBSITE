@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login Required</title>
+    <style>
+        body {
+            background-color: #f4f4f9;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            flex-direction: column;
+            text-align: center;
+            color: #333;
+        }
+
+        .login-message {
+            max-width: 520px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        .login-message h1,
+        .login-message p {
+            margin: 0;
+            white-space: nowrap;
+        }
+
+        .login-message h1 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .login-message p {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .login-message a {
+            color: #3498db;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .login-message a:hover {
+            text-decoration: underline;
+        }
+
+        .login-form {
+            max-width: 400px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .login-form input[type="text"],
+        .login-form input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        .login-form input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .login-form input[type="submit"]:hover {
+            background-color: #2980b9;
+        }
+
+        .error-message {
+            color: red;
+            margin-top: 10px;
+            white-space: nowrap;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-message">
+        <h1>Admin Login Required</h1>
+        <p>To access this site, you need admin login credentials.</p>
+        <p>Please contact your master admin on Twitter to get the credentials.</p>
+        <p>Send a message to <a href="https://twitter.com/BestHampus" target="_blank">@BestHampus</a> on Twitter.</p>
+    </div>
+    
+    <div class="login-form">
+        <form onsubmit="handleSubmit(event)">
+            <input type="text" id="username" placeholder="Username" required>
+            <input type="password" id="password" placeholder="Password" required>
+            <input type="submit" value="Login">
+        </form>
+        <div class="error-message" id="error-message"></div>
+    </div>
+
+    <script>
+        const encodedPassword = 'Um9zZWJ1ZDEyQnV0QWRtaW4=';
+        const correctUsername = 'Admin';
+        const correctPassword = atob(encodedPassword);
+        function handleSubmit(event) {
+            event.preventDefault();
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            const errorMessage = document.getElementById('error-message');
+
+            if (username === correctUsername && password === correctPassword) {
+                window.location.href = 'https://google.com'; // Redirect URL
+            } else {
+                errorMessage.textContent = 'Invalid username or password. Please try again.';
+            }
+        }
+    </script>
+</body>
+</html>
